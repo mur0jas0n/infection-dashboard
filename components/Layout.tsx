@@ -1,41 +1,70 @@
-import React, { ReactNode } from 'react'
-import Link from 'next/link'
-import Head from 'next/head'
+import React, { ReactNode } from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import CssBaseline from "@material-ui/core/CssBaseline";
+import AppBar from "@material-ui/core/AppBar";
+import Toolbar from "@material-ui/core/Toolbar";
+import Typography from "@material-ui/core/Typography";
+import Grid from "@material-ui/core/Grid";
+import Button from "@material-ui/core/Button";
 
 type Props = {
-  children?: ReactNode
-  title?: string
-}
+  children?: ReactNode;
+  title?: string;
+};
 
-const Layout = ({ children, title = 'This is the default title' }: Props) => (
-  <div>
-    <Head>
-      <title>{title}</title>
-      <meta charSet="utf-8" />
-      <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-    </Head>
-    <header>
-      <nav>
-        <Link href="/">
-          <a>Home</a>
-        </Link>{' '}
-        |{' '}
-        <Link href="/about">
-          <a>About</a>
-        </Link>{' '}
-        |{' '}
-        <Link href="/users">
-          <a>Users List</a>
-        </Link>{' '}
-        | <a href="/api/users">Users API</a>
-      </nav>
-    </header>
-    {children}
-    <footer>
-      <hr />
-      <span>I'm here to stay (Footer)</span>
-    </footer>
-  </div>
-)
+const useStyles = makeStyles((theme) => ({
+  root: {
+    "& > *": {
+      margin: theme.spacing(1),
+    },
+    flexGrow: 1,
+  },
+  menuButton: {
+    marginRight: theme.spacing(2),
+  },
+  title: {
+    flexGrow: 1,
+  },
+}));
 
-export default Layout
+const Layout = ({ children, title = "This is the default title" }: Props) => {
+  const classes = useStyles();
+
+  return (
+    <div className={classes.root}>
+      <CssBaseline />
+      <AppBar position="static" color="primary">
+        <Toolbar>
+          <Button color="inherit" href="/">
+            Home
+          </Button>
+          <Button color="inherit" href="/about">
+            About
+          </Button>
+          <Button color="inherit" href="/users">
+            Users List
+          </Button>
+          <Button color="inherit" href="/api/users">
+            Users API
+          </Button>
+        </Toolbar>
+      </AppBar>
+      <Grid container className="cardContainer">
+      <Typography component="h1" variant="h6" color="primary" noWrap>
+        {title}
+      </Typography>
+      </Grid>
+      <Grid container justify="center" className="cardContainer">
+        <Typography component="h1" variant="h6" color="inherit" noWrap>
+          {children}
+        </Typography>
+      </Grid>
+      <footer>
+        <hr />
+        <span>I'm here to stay (Footer)</span>
+      </footer>
+    </div>
+  );
+};
+
+export default Layout;
