@@ -13,7 +13,7 @@ import ListItemText from "@material-ui/core/ListItemText";
 //import @material-ui/icons
 import InboxIcon from "@material-ui/icons/MoveToInbox";
 
-const drawerWidth = 240;
+const drawerWidth:number = 240;
 
 const useStyles = makeStyles((theme) => ({
   drawer: {
