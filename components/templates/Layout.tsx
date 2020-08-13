@@ -1,6 +1,6 @@
 import React from "react";
-import Header from "./Layout/Header";
-import Sidebar from "./Layout/Sidebar";
+import Header from "../organisms/Header";
+import Sidebar from "../organisms/Sidebar";
 
 //import @material-ui/core
 import { makeStyles } from "@material-ui/core/styles";

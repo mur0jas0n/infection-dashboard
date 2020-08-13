@@ -3,9 +3,9 @@ import React from 'react';
 import { AppProps } from 'next/app';
 import { ThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import theme from '../components/theme';
-import Copyright from '../components/Copyright';
-import Layout from '../components/Layout';
+import theme from '../components/templates/theme';
+import Copyright from '../components/atoms/Copyright';
+import Layout from '../components/templates/Layout';
 
 export default function MyApp(props: AppProps) {
   const { Component, pageProps } = props;
