@@ -1,9 +1,9 @@
-import React from 'react';
-import Container from '@material-ui/core/Container';
-import Typography from '@material-ui/core/Typography';
-import Box from '@material-ui/core/Box';
+import React from 'react'
+import Container from '@material-ui/core/Container'
+import Typography from '@material-ui/core/Typography'
+import Box from '@material-ui/core/Box'
 
-export default function Covid() {
+const Covid = () => {
   return (
     <Container maxWidth="sm">
       <Box my={4}>
@@ -12,5 +12,7 @@ export default function Covid() {
         </Typography>
       </Box>
     </Container>
-  );
+  )
 }
+
+export default Covid
